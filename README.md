@@ -35,8 +35,12 @@
 ./biblioteca_guarrilla --color --filtros --mensaje='Un mensaje de Admin aqui' '/ruta/a/calibre/metadata.db'
 ```
 
+- Ver Ayuda con `--ayuda`.
+
 **English:**
 
 ```
 ./biblioteca_guarrilla --color --filters --message='Some Admin message here' '/path/to/calibre/metadata.db'
 ```
+
+- See Help with `--help`.
