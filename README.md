@@ -44,3 +44,34 @@
 ```
 
 - See Help with `--help`.
+
+
+# FAQ
+
+- Works over Wifi?.
+
+Yes.
+
+- How to set English as default language?.
+
+Its designed in a way that spoken language does not really matter too much.
+
+- Necesita Servidor Web?.
+
+No.
+
+- Que hace?.
+
+Genera una web a partir de un catalogo de Calibre.
+Calibre es una App de Libros Digitales.
+Recorre la carpeta de Calibre procesando archivos.
+Luego optimiza las tapas de libros de JPG a WebP.
+WebP pesa la mitad que JPG, para previews es mas que suficiente.
+La web mostrara una foto paisaje o similar si falta la tapa del libro.
+Luego optimiza los libros Mobi y PDF comprimiendolos en ZIP.
+PDF en ZIP es mas liviano. EPUB no se ZIPean.
+Al final la misma aplicacion sirve la web y se ve desde el browser.
+
+- Necesita Nim instalado?.
+
+No.
