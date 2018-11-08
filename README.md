@@ -56,9 +56,21 @@ Yes.
 
 Its designed in a way that spoken language does not really matter too much.
 
+- Necesita Nim instalado?.
+
+No.
+
 - Necesita Servidor Web?.
 
 No.
+
+- Como se instala?.
+
+No se instala. Solo ejecutalo y listo.
+
+- Como se configura?.
+
+No se configura. Solo ejecutalo y listo.
 
 - Que hace?.
 
@@ -71,7 +83,3 @@ La web mostrara una foto paisaje o similar si falta la tapa del libro.
 Luego optimiza los libros Mobi y PDF comprimiendolos en ZIP.
 PDF en ZIP es mas liviano. EPUB no se ZIPean.
 Al final la misma aplicacion sirve la web y se ve desde el browser.
-
-- Necesita Nim instalado?.
-
-No.
