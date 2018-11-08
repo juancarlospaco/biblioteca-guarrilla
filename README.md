@@ -88,5 +88,9 @@ Luego optimiza los libros Mobi y PDF comprimiendolos en ZIP.
 PDF en ZIP es mas liviano. EPUB no se ZIPean.
 Al final la misma aplicacion sirve la web y se ve desde el browser.
 
+- Fails with `Error: unhandled exception: cannot open: static/css/spectre.min.css [IOError]` ?
+
+Copy over [the `/static/` folder](https://github.com/juancarlospaco/biblioteca-guarrilla/tree/master/src/static/css).
+
 
 Run `nim doc biblioteca_guarrilla.nim` for more Documentation.
