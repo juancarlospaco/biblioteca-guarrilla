@@ -19,3 +19,8 @@
 - ~300Kb.
 - ~115 Lines of code.
 - 0 Dependencies.
+
+
+# Requisites
+
+- A Calibre database `metadata.db` (with the books on the same folder as the database, as typically used by Calibre App).
