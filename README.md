@@ -101,4 +101,5 @@ Copy over [the `/static/` folder](https://github.com/juancarlospaco/biblioteca-g
 
 </details>
 
+
 Run `nim doc biblioteca_guarrilla.nim` for more Documentation.
