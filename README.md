@@ -19,8 +19,24 @@
 - ~300Kb.
 - ~115 Lines of code.
 - 0 Dependencies.
+- English & Spanish supported.
 
 
 # Requisites
 
 - A Calibre database `metadata.db` (with the books on the same folder as the database, as typically used by Calibre App).
+
+
+# Use
+
+**Spanish:**
+
+```
+./biblioteca_guarrilla --color --filtros --mensaje='Un mensaje de Admin aqui' '/ruta/a/calibre/metadata.db'
+```
+
+**English:**
+
+```
+./biblioteca_guarrilla --color --filters --message='Some Admin message here' '/path/to/calibre/metadata.db'
+```
