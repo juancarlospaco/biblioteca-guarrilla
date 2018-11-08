@@ -83,3 +83,6 @@ La web mostrara una foto paisaje o similar si falta la tapa del libro.
 Luego optimiza los libros Mobi y PDF comprimiendolos en ZIP.
 PDF en ZIP es mas liviano. EPUB no se ZIPean.
 Al final la misma aplicacion sirve la web y se ve desde el browser.
+
+
+Run `nim doc biblioteca_guarrilla.nim` for more Documentation.
