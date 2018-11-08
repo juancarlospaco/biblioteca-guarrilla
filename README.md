@@ -12,6 +12,9 @@
 ![Biblioteca-Guarrilla](https://raw.githubusercontent.com/juancarlospaco/biblioteca-guarrilla/master/temp2.jpg "Mobile Responsive")
 
 
+![Biblioteca-Guarrilla](https://raw.githubusercontent.com/juancarlospaco/biblioteca-guarrilla/master/temp4.jpg "300Kb file size")
+
+
 - 1 file.
 - ~300Kb.
 - ~115 Lines of code.
