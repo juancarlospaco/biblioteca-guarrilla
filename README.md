@@ -72,6 +72,10 @@ No se instala. Solo ejecutalo y listo.
 
 No se configura. Solo ejecutalo y listo.
 
+- How to use Calibre?.
+
+[See docs.](https://calibre-ebook.com/help)
+
 - Que hace?.
 
 Genera una web a partir de un catalogo de Calibre.
