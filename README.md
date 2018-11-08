@@ -24,7 +24,7 @@
 
 # Requisites
 
-- A Calibre database `metadata.db` (with the books on the same folder as the database, as typically used by Calibre App).
+- A [Calibre](https://calibre-ebook.com) database `metadata.db` (with the books on the same folder as the database, as typically used by Calibre App).
 
 
 # Use
