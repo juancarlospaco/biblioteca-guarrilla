@@ -93,4 +93,12 @@ Al final la misma aplicacion sirve la web y se ve desde el browser.
 Copy over [the `/static/` folder](https://github.com/juancarlospaco/biblioteca-guarrilla/tree/master/src/static/css).
 
 
+#### Internal Structure
+
+<details>
+
+![Biblioteca-Guarrilla](https://raw.githubusercontent.com/juancarlospaco/biblioteca-guarrilla/master/dot.jpg "GraphViz Plot for Developers")
+
+</details>
+
 Run `nim doc biblioteca_guarrilla.nim` for more Documentation.
