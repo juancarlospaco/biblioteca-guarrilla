@@ -85,7 +85,7 @@ Luego optimiza las tapas de libros de JPG a WebP.
 WebP pesa la mitad que JPG, para previews es mas que suficiente.
 La web mostrara una foto paisaje o similar si falta la tapa del libro.
 Luego optimiza los libros Mobi y PDF comprimiendolos en ZIP.
-PDF en ZIP es mas liviano. EPUB no se ZIPean.
+PDF en ZIP es mas liviano. EPUB no se ZIPean. No borra ningun archivo nunca.
 Al final la misma aplicacion sirve la web y se ve desde el browser.
 
 - Fails with `Error: unhandled exception: cannot open: static/css/spectre.min.css [IOError]` ?
