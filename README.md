@@ -88,6 +88,10 @@ Luego optimiza los libros Mobi y PDF comprimiendolos en ZIP.
 PDF en ZIP es mas liviano. EPUB no se ZIPean. No borra ningun archivo.
 Al final la misma aplicacion sirve la web y se ve desde el browser.
 
+- Donde se Descarga?.
+
+https://github.com/juancarlospaco/biblioteca-guarrilla/releases
+
 - Fails with `Error: unhandled exception: cannot open: static/css/spectre.min.css [IOError]` ?
 
 Copy over [the `/static/` folder](https://github.com/juancarlospaco/biblioteca-guarrilla/tree/master/src/static/css).
