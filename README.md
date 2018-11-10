@@ -17,7 +17,7 @@
 
 - 1 file.
 - ~300Kb.
-- ~115 Lines of code.
+- ~130 Lines of code.
 - 0 Dependencies.
 - English & Spanish supported.
 
@@ -32,17 +32,35 @@
 **Spanish:**
 
 ```
-./biblioteca_guarrilla --color --filtros --mensaje='Un mensaje de Admin aqui' '/ruta/a/calibre/metadata.db'
+./biblioteca_guarrilla --color --filtros --desbichar --limite=42 --autorefresco=9 --mensaje='Un mensaje de Admin aqui' '/ruta/a/calibre/metadata.db'
 ```
 
+Opciones:
+
+- `--desbichar` Modo de depuracion de errores.
+- `--color` Usar coloreado de la salide de Terminal.
+- `--autorefresco=9` Forzar Auto-Refresco de la Web en Segundos, numero 1 ~ 255.
+- `--filtros` Usar Filtros por Inicial del nombre del libro en la pagina Web.
+- `--mensaje` Mensaje de Admin se ve en la pagina Web, ideal MOTD, COC, etc.
+- `--limite=42` Limite maximo de Libros a publicar en la Web, numero 1 ~ 255.
+- `--salida='/ruta/a/archivo.html'` Escribir Web a un archivo en lugar de servirla.
 - Ver Ayuda con `--ayuda`.
 
 **English:**
 
 ```
-./biblioteca_guarrilla --color --filters --message='Some Admin message here' '/path/to/calibre/metadata.db'
+./biblioteca_guarrilla --color --filters --debug --limit=42 --autorefresh=9 --message='Some Admin message here' '/path/to/calibre/metadata.db'
 ```
 
+Options:
+
+- `--debug` Debug mode.
+- `--color` Use colored Terminal output.
+- `--autorefresh=9` Forze Auto-Refresh of Web on Seconds, 1 ~ 255 integer.
+- `--filters` Use Filters per book name on the Web.
+- `--message` Admin Message seen on the Web, ideal for MOTD, COC, etc.
+- `--limit=42` Max number of books to publish on the Web, 1 ~ 255 integer.
+- `--output='/path/to/file.html'` Write the Web to a file instead of serving it.
 - See Help with `--help`.
 
 
@@ -63,6 +81,10 @@ No.
 - Necesita Servidor Web?.
 
 No.
+
+- Se puede usar con Python, Flask, Bottlepy, etc?.
+
+Si, usar opcion `--salida=` y servir la web con la App Python (No provista).
 
 - Como se instala?.
 

@@ -46,9 +46,10 @@ proc xml2json*(xmlstr: string, wanted_fields: seq[string]): JsonNode =
     else:
       result.add(field, %"")
 
-proc walky(path: string, nowebp: bool): seq[JsonNode] =
+proc walky(path: string, nowebp: bool, limit: byte): seq[JsonNode] =
   ## Walk & Preprocess a Calibre directory of files.
   var
+    limite = limit.int16
     okmeta: JsonNode
     okcover, okmobi, okpdf, okepub, okopf: string
   for file in walkDirRec(path):
@@ -76,6 +77,10 @@ proc walky(path: string, nowebp: bool): seq[JsonNode] =
       okopf = normalize_filename(file, ".json")
       okmeta = xml2json(readFile(file), @bookOpfFields)
       writeFile(okopf, okmeta.pretty)
+      if limite == 1: #  0 Disabled.
+        break         #  1 Break.
+      if limite > 1:  # >1 Decrement.
+        dec limite
       result.add %*{
         "cover": okcover.replace(path, ""),
         "mobi": okmobi.replace(path, ""),
@@ -94,20 +99,27 @@ proc walky(path: string, nowebp: bool): seq[JsonNode] =
         "indice": $bookCategories[$okmeta["dc:title"].str.toLowerAscii[0]]
       }
 
-proc main*(folder: string, filters, nowebp: bool,  msg="") =
-  ## Main function to preprocess, render and serve HTML.
-  let web = generateHTML(walky(folder, nowebp), bookCategories, filters, msg)
-  routes:
-    get "/":
-      setStaticDir(request, folder)
-      resp web
+proc main*(folder: string, filters, nowebp, debugs: bool, limit, autorefresh: byte, output: string, msg="") =
+  ## Main function to preprocess, render and serve or write HTML. Also simple Debug.
+  let
+    jotason = walky(folder, nowebp, limit)
+    web = generateHTML(jotason, bookCategories, filters, msg, autorefresh)
+  if debugs: echo jotason
+  if output.len > 0:
+    writeFile(output, web)
+  else:
+    routes:
+      get "/":
+        setStaticDir(request, folder)
+        resp web
 
 
 when is_main_module:
   {. passL: "-s", passC: "-flto", optimization: size .}
   import parseopt, terminal, random
   var
-    message: string
+    limit, autorefresh: byte
+    message, output: string
     debugs, filters, nowebp: bool
   for tipoDeClave, clave, valor in getopt():
     case tipoDeClave
@@ -115,14 +127,19 @@ when is_main_module:
       case clave
       of "version":             quit("0.1.5", 0)
       of "license", "licencia": quit("GPL", 0)
-      of "help", "ayuda":       quit("biblioteca_guarrilla --color --filtros --mensaje='Admin Message' '/ruta/a/calibre/metadata.db'", 0)
+      of "help", "ayuda":       quit("biblioteca_guarrilla --color --filtros --desbichar --limite=42 --autorefresco=9 --mensaje='Admin Message' '/ruta/a/calibre/metadata.db'", 0)
       of "filters", "filtros":  filters = true
       of "nowebp":              nowebp = true
+      of "debug", "desbichar":  debugs = true
       of "mensaje", "message":  message = valor.string.strip.normalize
+      of "limit", "limite":     limit = valor.parseInt.byte
+      of "output", "salida":    output = valor.string.strip
+      of "autorefresco", "autorefresh":
+        autorefresh = valor.parseInt.byte
       of "color":
         randomize()
         setBackgroundColor(bgBlack)
         setForegroundColor([fgRed, fgGreen, fgYellow, fgBlue, fgMagenta, fgCyan, fgWhite].rand)
     of cmdArgument:
-      main(clave.string.strip.parentDir, filters, nowebp, message)
+      main(clave.string.strip.parentDir, filters, nowebp, debugs, limit, autorefresh, output, message)
     of cmdEnd: quit("Error desconocido. Ver la Ayuda con --ayuda", 1)
