@@ -6,7 +6,8 @@ description   = "Simple web to share books, Calibre, Jester, Spectre CSS, No Jav
 license       = "GPL"
 srcDir        = "src"
 bin           = @["biblioteca_guarrilla"]
-installDirs  = @["static", "static/css"]
+installDirs   = @["static", "static/css"]
+installFiles  = @["static/css/spectre.min.css", "static/css/spectre-exp.min.css"]
 
 
 # Dependencies
