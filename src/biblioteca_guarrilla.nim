@@ -125,7 +125,7 @@ when is_main_module:
     case tipoDeClave
     of cmdShortOption, cmdLongOption:
       case clave
-      of "version":             quit("0.1.8", 0)
+      of "version":             quit("0.1.9", 0)
       of "license", "licencia": quit("GPL", 0)
       of "help", "ayuda":       quit("biblioteca_guarrilla --color --filtros --desbichar --limite=42 --autorefresco=9 --mensaje='Admin Message' '/ruta/a/calibre/metadata.db'", 0)
       of "filters", "filtros":  filters = true
