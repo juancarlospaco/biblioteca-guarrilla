@@ -18,7 +18,7 @@
 - 1 file.
 - ~300Kb.
 - ~130 Lines of code.
-- 0 Dependencies.
+- 0 Dependencies (`libzip` may or may not be required depending on your system config, should be present on most OS nowadays).
 - English & Spanish supported.
 
 
