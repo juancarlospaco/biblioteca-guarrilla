@@ -1,7 +1,7 @@
 import
-  strutils, strformat, os, ospaths, tables, json,
+  strutils, strformat, os, tables, json,
   xmlparser, xmltree, jester, webp, zip/zipfiles
-include "biblioteca_guarrilla.tmpl"
+include "biblioteca_guarrilla.nimf"
 
 const
   bookCategories* = {
@@ -139,7 +139,7 @@ when is_main_module:
       of "color":
         randomize()
         setBackgroundColor(bgBlack)
-        setForegroundColor([fgRed, fgGreen, fgYellow, fgBlue, fgMagenta, fgCyan, fgWhite].rand)
+        setForegroundColor([fgRed, fgGreen, fgYellow, fgBlue, fgMagenta, fgCyan, fgWhite].sample)
     of cmdArgument:
       main(clave.string.strip.parentDir, filters, nowebp, debugs, limit, autorefresh, output, message)
     of cmdEnd: quit("Error desconocido. Ver la Ayuda con --ayuda", 1)
